@@ -65,6 +65,16 @@ export default class CreateRoomPage extends Component {
                         </FormHelperText>
                     </FormControl>
                 </Grid>
+                <Grid item xs={12} align="center">
+                    <Button color="primary" variant="contained">
+                        Create a Room
+                    </Button>
+                </Grid>
+                <Grid item xs={12} align="center">
+                    <Button color="secondary" variant="contained" to="/" component={Link}>
+                        Back
+                    </Button>
+                </Grid>
             </Grid>
         );
     }
