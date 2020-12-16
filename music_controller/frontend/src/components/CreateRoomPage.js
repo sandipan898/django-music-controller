@@ -10,6 +10,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { Link } from 'react-router-dom';
 import { Collapse } from '@material-ui/core';
+import Alert from "@material-ui/lab/Alert";
 
 
 export default class CreateRoomPage extends Component {
@@ -132,7 +133,7 @@ export default class CreateRoomPage extends Component {
 
                 <Grid item xs={12} align="center">
                     <Collapse in={ this.state.errorMsg != "" || this.state.successMsg != ""}>
-                        { this.state.successMsg }
+                        { this.state.successMsg != "" ? (<Alert severity="success" onClose={() => { this.setState({successMsg: ""});}}>{this.state.successMsg}</Alert>) : (<Alert severity="error" onClose={() => { this.setState({successMsg: ""});}}>{this.state.errorMsg}</Alert>) }
                     </Collapse>
                 </Grid>
                 <Grid item xs={12} align="center">
